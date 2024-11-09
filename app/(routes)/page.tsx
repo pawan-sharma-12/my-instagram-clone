@@ -1,4 +1,5 @@
 import { auth, signIn } from "@/auth";
+import UserSignout from "@/components/UserSignout.component";
 import { signOut } from "next-auth/react";
 
 
@@ -7,15 +8,7 @@ export default async function Home() {
   return (
       <div >
         test <br/>
-        { session &&    (
-          <form
-        action={async () => {
-          "use server"
-          await signOut();
-        }}
-      >
-        <button className="text-white bg-ig-red px-4 py-2 rounded-lg" type="submit" >Logout</button>
-      </form>)}
+        { session && (<UserSignout/>)}
     { !session &&    <form
         action={async () => {
           "use server"
