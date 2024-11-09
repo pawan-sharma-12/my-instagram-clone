@@ -16,9 +16,9 @@ const page = () => {
             <CheckIcon size={16}/>
           </div>
         </div>
-        <div>
+        <Link href={"/settings"}>
           <Cog/>
-        </div>
+        </Link>
       </section>
       <section className='mt-8 flex justify-center '>
       <div className="size-48 bg-orange-500 rounded-full p-2 bg-gradient-to-tr from-ig-orange to-ig-red">
