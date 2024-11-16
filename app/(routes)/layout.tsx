@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "../globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import Link from "next/link";
+import { CameraIcon, Grid, GridIcon, HomeIcon, LayoutGridIcon, SearchIcon, UserIcon } from "lucide-react";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -33,6 +35,20 @@ export default function RootLayout({
         <Theme>
 
         {children}
+        <div className="fixed bottom-0   px-2 py-2 left-0 right-0">
+          <div className="flex justify-between text-gray-600 *:size-12 *:flex *:items-center max-w-sm mx-auto  *:bg-blue-300">
+
+          <Link href = '/home'>
+          <HomeIcon/>
+          </Link>
+          <Link href={'/search'}> <SearchIcon/> </Link>
+          <Link href={'/create'} className="bg-gradient-to-tr from-ig-orange to-ig-red size-12 flex items-center justify-center text-white rounded-full relative -top-8"> <CameraIcon/></Link>
+          <Link href={'/browse'}> <LayoutGridIcon/> </Link>
+          <Link href='/profile'>
+            <UserIcon className="text-ig-red"/>
+            </Link>
+          </div>
+        </div>
         </Theme>
       </body>
     </html>
